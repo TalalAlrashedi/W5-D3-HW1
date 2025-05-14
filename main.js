@@ -14,8 +14,6 @@ function logout() {
   appendAlert("تم تسجيل الخروج بنجاح", "warning");
 
   setTimeout(() => {
-    window.location.reload();
-
     window.location.href = "./login.html";
   }, 2000);
 }
@@ -43,8 +41,8 @@ button.addEventListener("click", async () => {
     }),
   });
 
-  postText.value =""
-  imageUrl.value = ""
+  postText.value = "";
+  imageUrl.value = "";
   getPosts();
 });
 
