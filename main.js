@@ -43,6 +43,8 @@ button.addEventListener("click", async () => {
     }),
   });
 
+  postText.value =""
+  imageUrl.value = ""
   getPosts();
 });
 
@@ -76,11 +78,11 @@ function dsipalyPosts(posts) {
     deleteBtn.className = "deleteBtn";
     deleteBtn.style.fontSize = "1rem";
     deleteBtn.onclick = async () => {
-      let isConfirm = confirm("هل تريد حذف المنشور؟");
-      if (!isConfirm) {
-        return;
-      }
       if (currentUser && item.userId === currentUser.id) {
+        let isConfirm = confirm("هل تريد حذف المنشور؟");
+        if (!isConfirm) {
+          return;
+        }
         await fetch(`${apiUrl}/post/${item.id}`, {
           method: "DELETE",
         });

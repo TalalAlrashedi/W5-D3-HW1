@@ -10,7 +10,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Marhey:wght@300..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 
+      body {
+        font-family: "Cairo", sans-serif;
+      }
+    </style>
     <title>Home page</title>
   </head>
   <body>
@@ -27,24 +33,25 @@
               >Login</a
             >
           </button>
-         
+
           <button onclick="logout()" id="logout-link" class="d-none">
             logOut
           </button>
         </div>
       </div>
-
     </nav>
 
-    <section
-      class="d-flex flex-column gap-2 m-auto"
-      style="max-width: 600px; padding: 1rem"
+    <section dir="rtl"
+      class="d-flex flex-column mt-3 text-center gap-2 m-auto rounded-4"
+      style="max-width: 600px; padding: 1rem; background-color: rgba(13, 10, 78, 0.09);"
     >
-    <div id="liveAlertPlaceholder"></div>
+      <div  id="liveAlertPlaceholder"></div>
       <h2>إضافة منشور</h2>
-      <input placeholder="رابط الصورة" type="text" id="imageUrl" required />
-      <input placeholder="نص المنشور" type="text" id="postText" />
-      <button id="submit" class="btn btn-primary">نشر</button>
+      <div class="d-flex flex-column w-50 gap-4  m-auto justify-content-center">
+        <input placeholder="رابط الصورة" type="text" id="imageUrl" required />
+        <input placeholder="نص المنشور" type="text" id="postText" />
+        <button id="submit" class="btn btn-primary">نشر</button>
+      </div>
     </section>
     <div id="posts-container" class="posts-grid"></div>
     <script src="main.js"></script>
