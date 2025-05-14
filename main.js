@@ -16,7 +16,7 @@ function logout() {
   setTimeout(() => {
     window.location.reload();
 
-    window.location.href = "/login.html";
+    window.location.href = "./login.html";
   }, 2000);
 }
 const imageUrl = document.getElementById("imageUrl");

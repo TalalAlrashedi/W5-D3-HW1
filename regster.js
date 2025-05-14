@@ -34,7 +34,7 @@ async function crateUser(user) {
     appendAlert("تم تسجيل الحساب بنجاح " ,"success")
 
     setTimeout(() => {
-      window.location.href = "/login.html";
+      window.location.href = "./login.html";
     } , 2000)
 
   } catch (error) {

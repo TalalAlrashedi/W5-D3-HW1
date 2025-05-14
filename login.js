@@ -23,7 +23,7 @@ async function login() {
       appendAlert("تم تسجيل الدخول مرحبا بك مجددا", "success");
       setTimeout(() => {
         
-        window.location.href = "/index.html";
+        window.location.href = "./index.html";
       }, 2000);
     } else {
       appendAlert("اسم المستخدم او كلمة المرور غير صحيح", "danger");
