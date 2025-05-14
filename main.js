@@ -2,6 +2,23 @@ const apiUrl = "https://68219a1b259dad2655afc217.mockapi.io/api";
 
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+if (currentUser) {
+  document.getElementById("logout-link").className =
+    "d-flex btn btn-outline-danger";
+} else {
+  document.getElementById("login-link").className = "d-flex btn btn-success";
+}
+
+function logout() {
+  localStorage.removeItem("currentUser");
+  appendAlert("تم تسجيل الخروج بنجاح", "warning");
+
+  setTimeout(() => {
+    window.location.reload();
+
+    window.location.href = "/login.html";
+  }, 2000);
+}
 const imageUrl = document.getElementById("imageUrl");
 const postText = document.getElementById("postText");
 const button = document.getElementById("submit");
@@ -59,10 +76,9 @@ function dsipalyPosts(posts) {
     deleteBtn.className = "deleteBtn";
     deleteBtn.style.fontSize = "1rem";
     deleteBtn.onclick = async () => {
-
-      let isConfirm = confirm("هل تريد حذف المنشور؟")
-      if(!isConfirm){
-        return
+      let isConfirm = confirm("هل تريد حذف المنشور؟");
+      if (!isConfirm) {
+        return;
       }
       if (currentUser && item.userId === currentUser.id) {
         await fetch(`${apiUrl}/post/${item.id}`, {
@@ -76,7 +92,7 @@ function dsipalyPosts(posts) {
 
     let commentList = document.createElement("ul");
     commentList.className = "commentContainer";
-    let comments = item.comment ;
+    let comments = item.comment;
 
     for (let i = 0; i < comments.length; i++) {
       let comment = comments[i];

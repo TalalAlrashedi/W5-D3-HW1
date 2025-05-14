@@ -27,16 +27,20 @@
               >Login</a
             >
           </button>
+         
           <button onclick="logout()" id="logout-link" class="d-none">
             logOut
           </button>
         </div>
       </div>
+
     </nav>
+
     <section
       class="d-flex flex-column gap-2 m-auto"
       style="max-width: 600px; padding: 1rem"
     >
+    <div id="liveAlertPlaceholder"></div>
       <h2>إضافة منشور</h2>
       <input placeholder="رابط الصورة" type="text" id="imageUrl" required />
       <input placeholder="نص المنشور" type="text" id="postText" />
@@ -44,23 +48,24 @@
     </section>
     <div id="posts-container" class="posts-grid"></div>
     <script src="main.js"></script>
+    <script src="./alert.js"></script>
     <script>
-      const u = localStorage.getItem("currentUser");
-      if (u) {
-        document.getElementById("logout-link").className =
-          "d-flex btn btn-outline-danger";
-      } else {
-        document.getElementById("login-link").className =
-          "d-flex btn btn-success";
-      }
+      // const u = localStorage.getItem("currentUser");
+      // if (u) {
+      //   document.getElementById("logout-link").className =
+      //     "d-flex btn btn-outline-danger";
+      // } else {
+      //   document.getElementById("login-link").className =
+      //     "d-flex btn btn-success";
+      // }
 
-      function logout() {
-        localStorage.removeItem("currentUser");
+      // function logout() {
+      //   localStorage.removeItem("currentUser");
 
-        window.location.reload();
-        alert("تم تسجيل الخروج سيتم نقلك الى صفحة تسجيل الدخول");
-        window.location.href = "/login.html";
-      }
+      //   window.location.reload();
+
+      //   window.location.href = "/login.html";
+      // }
     </script>
   </body>
 </html>

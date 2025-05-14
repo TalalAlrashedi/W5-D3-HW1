@@ -31,8 +31,12 @@ async function crateUser(user) {
 
     const data = await response.json();
     console.log("تم التسجيل", data);
-    alert("تم التسجيل بنجاح");
-    window.location.href = "/login.html";
+    appendAlert("تم تسجيل الحساب بنجاح " ,"success")
+
+    setTimeout(() => {
+      window.location.href = "/login.html";
+    } , 2000)
+
   } catch (error) {
     console.log("error regster", error);
   }

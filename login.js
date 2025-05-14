@@ -19,10 +19,15 @@ async function login() {
     );
     console.log(userExist);
     if (userExist) {
-      localStorage.setItem("currentUser", JSON.stringify(userExist)); 
-      window.location.href = "/index.html";
+      localStorage.setItem("currentUser", JSON.stringify(userExist));
+      appendAlert("تم تسجيل الدخول مرحبا بك مجددا", "success");
+      setTimeout(() => {
+        
+        window.location.href = "/index.html";
+      }, 2000);
     } else {
-      alert("username or passowrd err");
+      appendAlert("اسم المستخدم او كلمة المرور غير صحيح", "danger");
+      return;
     }
   } catch (err) {
     console.log("error login", err);
