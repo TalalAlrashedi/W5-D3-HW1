@@ -1,0 +1,101 @@
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 100%;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #837b7b17;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 1 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h4 {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+.deleteBtn {
+  align-self: center;
+  margin: 4%;
+  margin-left: 0.5rem;
+  padding: 0.1rem;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #dc3545;
+  color: white;
+}
+
+.addComment{
+
+    margin-top: 0.5rem;
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #354bdc;
+    color: white;
+}
+.addComment:hover {
+    background-color: #312ab0;
+    transition: 0.3s ease-in-out;
+  }
+
+.deleteBtn:hover {
+  background-color: #b02a37;
+  transition: 0.3s ease-in-out;
+}
+
+.commentContainer{
+    background-color: #55555511;
+    list-style: none;
+    padding: 0.4rem;
+
+}
+
+@media screen and (max-width: 1200px) {
+  .posts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .posts-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
